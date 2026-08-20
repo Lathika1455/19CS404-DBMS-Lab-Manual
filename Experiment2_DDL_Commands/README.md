@@ -311,6 +311,10 @@ FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
 
 <img width="1213" height="304" alt="image" src="https://github.com/user-attachments/assets/16227922-c811-4b6b-ab7c-8e4ece2bba5e" />
 
+## SEB GRADE
+
+<img width="1105" height="77" alt="image" src="https://github.com/user-attachments/assets/17bb1339-bafc-4476-b973-0f59cb0dd0f5" />
+
 
 ## RESULT
 Thus, the SQL queries to implement different types of constraints and DDL commands have been executed successfully.
