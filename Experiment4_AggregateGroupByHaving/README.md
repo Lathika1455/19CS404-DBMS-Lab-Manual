@@ -38,123 +38,157 @@ HAVING condition;
 
 **Question 1**
 --
--- Paste Question 1 here
+Write a SQL query to calculate the total number of working hours of all employees
 
 ```sql
--- Paste your SQL code below for Question 1
+select sum(workhour) as 'Total working hours'
+from employee1;
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="802" height="398" alt="image" src="https://github.com/user-attachments/assets/93ab9df9-a790-4cf3-bc23-2b914baa4ae9" />
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+Write a SQL query to find the maximum purchase amount.
 
 ```sql
--- Paste your SQL code below for Question 2
+select max(purch_amt) as MAXIMUM
+from orders;
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="470" height="375" alt="image" src="https://github.com/user-attachments/assets/38f27bc3-0662-4545-b4b9-0bd59762aabd" />
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+Write a SQL query to find the minimum purchase amount.
+
 
 ```sql
--- Paste your SQL code below for Question 3
+SELECT 
+    MIN(purch_amt) AS MINIMUM
+FROM 
+    orders;
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="446" height="380" alt="image" src="https://github.com/user-attachments/assets/c3fa4d68-f4f1-4e72-9ccd-9cbcbd6d2c2b" />
 
 **Question 4**
 ---
--- Paste Question 4 here
+How many patients are covered by each insurance company?
 
 ```sql
--- Paste your SQL code below for Question 4
+select InsuranceCompany,count(*) as TotalPatients
+from Insurance
+group by InsuranceCompany;
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="847" height="757" alt="image" src="https://github.com/user-attachments/assets/3c88a6df-0f31-42fb-bffa-19a751698f42" />
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+What is the count of male and female patients?
 
 ```sql
--- Paste your SQL code below for Question 5
+select gender,count(*) as TotalPatients
+from patients
+group by gender;
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="752" height="427" alt="image" src="https://github.com/user-attachments/assets/a4cd837f-fa6b-4ecb-af0f-3444dd2637ac" />
 
 **Question 6**
 ---
--- Paste Question 6 here
+How many patients have insurance coverage valid in each year?
+
 
 ```sql
--- Paste your SQL code below for Question 6
+select strftime('%Y',Validityperiod) as ValidityYear,count(*) as TotalPatients
+from insurance
+group by ValidityYear
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="773" height="452" alt="image" src="https://github.com/user-attachments/assets/e65f313b-2c35-4abe-93d4-cd67d6755458" />
 
 **Question 7**
 ---
--- Paste Question 7 here
+Write the SQL query that accomplishes the grouping of data by age, calculates the total income for each age group, and includes only those age groups where the total income sum is greater than 1,000,000.
 
 ```sql
--- Paste your SQL code below for Question 7
+SELECT 
+  age,
+  SUM(income) AS "SUM(income)"
+FROM employee
+GROUP BY age
+HAVING SUM(income) > 1000000;
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="728" height="471" alt="image" src="https://github.com/user-attachments/assets/a36b01dc-bddb-437f-acf8-505f8784e4e9" />
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+Write the SQL query that achieves the grouping of data by age, calculates the minimum income for each age group, and includes only those age groups where the minimum income is less than 1,000,000.
 
 ```sql
--- Paste your SQL code below for Question 8
+select age,min(income) as Income
+from employee
+group by age
+having min(income) < 1000000;
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="707" height="501" alt="image" src="https://github.com/user-attachments/assets/1b555d55-3518-44ed-8d32-313fac1e7580" />
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+Write the SQL query that achieves the grouping of data by age groups, displays the minimum salary for each group, and excludes groups where the minimum salary is not less than 2000.
 
 ```sql
--- Paste your SQL code below for Question 9
+SELECT (age/5) * 5 AS age_group, MIN(salary)
+FROM customer1
+GROUP BY age_group
+HAVING MIN(salary) < 2000
+ORDER BY age_group;
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="703" height="408" alt="image" src="https://github.com/user-attachments/assets/e9c46b24-dc8c-48d5-99bc-65a13d260538" />
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+Write the SQL query that achieves the grouping of data by occupation, calculates the minimum work hours for each occupation, and excludes occupations where the minimum work hour is not greater than 8.
 
 ```sql
--- Paste your SQL code below for Question 10
+select occupation,min(workhour) as 'MIN(workhour)'
+from employee1
+group by occupation
+having min(workhour) > 8;
 ```
 
 **Output:**
 
-![Output10](output.png)
+<img width="857" height="552" alt="image" src="https://github.com/user-attachments/assets/4acbb7d0-a22f-4841-a7b6-2eb47fe68c35" />
 
 
 ## RESULT
