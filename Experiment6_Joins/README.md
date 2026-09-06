@@ -238,6 +238,7 @@ inner join doctors d on p.doctor_id=d.doctor_id;
 
 **Output:**
 
+<img width="1252" height="572" alt="image" src="https://github.com/user-attachments/assets/cfa7c232-d9a9-4dd1-b2d2-487756aec1a5" />
 
 
 
